@@ -1,0 +1,249 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 214, 219, 220;
+    --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        background-color: white;
+    }
+}
+
+.nav {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.nav-left {
+    display: flex;
+}
+
+.nav-right {
+    display: flex;
+}
+
+.followbtn {
+    margin: 5px;
+    width: 80%;
+    height: 20%;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    border-radius: 10px;
+    background-image: linear-gradient(to right, #D20653, #FF951D);
+    align-items: center;
+}
+/* to be used in desktop */
+.reviewbtn {
+    display: none;
+    margin: 5px;
+    width: 20%;
+        height: 20%;
+        padding: 10px 20px;
+        font-size: 16px;
+        color: white;
+        border-radius: 10px;
+        background-image: linear-gradient(to right, #D20653, #FF951D);
+
+}
+/* to be used in desktop */
+.productbtn {  
+    display: none;
+    margin: 5px;
+    width: 20%;
+        height: 20%;
+        padding: 10px 20px;
+        font-size: 16px;
+        color: white;
+        border-radius: 10px;
+        background-image: linear-gradient(to right, #D20653, #FF951D);
+
+}
+
+.articles,
+.reviews {
+    margin: 5px;
+    width: 30%;
+    height: 20%;
+    padding: 8px;
+    color: rgba(224, 224, 224, 1);
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 15px;
+    border: 2px solid rgba(224, 224, 224, 1);
+    /* Set border width and style */
+}
+
+.products {
+    margin: 5px;
+    width: 30%;
+    height: 20%;
+    padding: 8px;
+    color: rgba(255, 149, 29, 1);
+    background-color: rgba(255, 245, 233, 1);
+    border-radius: 15px;
+    border: 2px solid rgba(255, 149, 29, 1);
+    /* Set border width and style */
+}
+
+
+
+.fullpage{
+    background-color: rgb(243, 242, 242);
+    padding: 5px;
+}
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 1);
+    padding: 10px;
+    border-radius: 15px;
+    margin: 20px;
+    color: black;
+    
+}
+
+.qr-code{
+display: flex;
+flex-direction: row;
+background-color: rgba(255, 255, 255, 1);
+padding: 20px;
+border-radius: 15px;
+margin: 20px;
+color: black;
+justify-content: space-between;
+}
+
+.qr-title{
+    font-size: 24px;
+    padding-right: 20%;
+}
+
+.impbtn {
+    display: flex;
+    margin: 10px;
+}
+
+.following, .followers, .rate {
+    margin: 10px;
+}
+
+.prodsection {
+    justify-content: center;
+        background-color: rgba(255, 255, 255, 1);
+        padding: 10px;
+        border-radius: 15px;
+        margin: 20px;
+        color: black
+}
+
+.probtns {
+    display: flex;
+    flex-direction: row;
+}
+
+.prodtitle {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}
+
+.proh2 {
+    color:black;
+    font-weight: bolder;
+    font-size: 24px;
+}
+
+.proimage1 {
+    position: relative;
+}
+
+.proimage1 .image1 {
+    position: relative;
+    min-width: 150px;
+    min-height: 150px;
+}
+
+.proimage1 .image2 {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.proimage1 .image3 {
+    position: absolute;
+    right: 0%;
+    bottom: 23%;
+}
+
+.firstpro {
+    display: flex;
+    flex-direction: row;
+}
+
+.proimage2 {
+    
+    position: relative;
+}
+
+.proimage2 .image1 {
+    position: relative;
+    min-width: 150px;
+    max-height: 150px;
+}
+
+.proimage2 .image2 {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.proimage2 .image3 {
+    position: absolute;
+    right: 8%;
+    bottom: 50px;
+}
+
+.secondpro {
+    display: flex;
+    flex-direction: row;
+}
+.infosec {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.p1, .p2, .p3 {
+    font-size: 12px;
+}
+
+.btnsclass {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+.first, .second, .third {
+    margin: 5px;
+    width: 50%;
+    height: 50%;
+    padding: 10px;
+    color: rgba(255, 149, 29, 1);
+    background-color: rgba(255, 245, 233, 1);
+    border-radius: 20px;
+    font-family: Nunito;
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 20px;
+}
