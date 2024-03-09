@@ -25,52 +25,73 @@
     display: flex;
 }
 
+.navlinks {
+    display: none;
+}
+
 .nav-right {
     display: flex;
 }
 
+.name, .para {
+    font-family: 'Nunito';
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 100%;
+}
+
 .followbtn {
-    margin: 5px;
-    width: 80%;
+    margin: 30px;
+    margin-top: 0px;
+    width: 90%;
     height: 20%;
-    padding: 10px 20px;
+    padding: 20px;
     font-size: 16px;
     color: white;
     border-radius: 10px;
     background-image: linear-gradient(to right, #D20653, #FF951D);
     align-items: center;
 }
-/* to be used in desktop */
-.reviewbtn {
-    display: none;
-    margin: 5px;
-    width: 20%;
-        height: 20%;
-        padding: 10px 20px;
-        font-size: 16px;
-        color: white;
-        border-radius: 10px;
-        background-image: linear-gradient(to right, #D20653, #FF951D);
 
+.reviewbtn {
+    display: flex;
+    position: absolute;
+    right: 20px;
+    top: 1050px;
+    margin: 20px;
+    padding: 3px;
+    width: 20%;
+    height: 10%;
+    color: white;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to right, #D20653, #FF951D);
 }
 /* to be used in desktop */
 .productbtn {  
     display: none;
     margin: 5px;
     width: 20%;
-        height: 20%;
-        padding: 10px 20px;
-        font-size: 16px;
-        color: white;
-        border-radius: 10px;
-        background-image: linear-gradient(to right, #D20653, #FF951D);
+    height: 20%;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    border-radius: 10px;
+    background-image: linear-gradient(to right, #D20653, #FF951D);
 
+}
+
+.probtn{
+    display: flex;
+    width: 100%;
+    height: 70%;
 }
 
 .articles,
 .reviews {
     margin: 5px;
-    width: 30%;
+    width: 60%;
     height: 20%;
     padding: 8px;
     color: rgba(224, 224, 224, 1);
@@ -82,14 +103,13 @@
 
 .products {
     margin: 5px;
-    width: 30%;
+    width: 60%;
     height: 20%;
     padding: 8px;
     color: rgba(255, 149, 29, 1);
     background-color: rgba(255, 245, 233, 1);
     border-radius: 15px;
     border: 2px solid rgba(255, 149, 29, 1);
-    /* Set border width and style */
 }
 
 
@@ -111,10 +131,15 @@
     
 }
 
+.qr-main {
+    background-color: rgba(255, 255, 255, 1);
+    margin: 20px;
+    border-radius: 15px;
+}
+
 .qr-code{
 display: flex;
 flex-direction: row;
-background-color: rgba(255, 255, 255, 1);
 padding: 20px;
 border-radius: 15px;
 margin: 20px;
@@ -127,13 +152,42 @@ justify-content: space-between;
     padding-right: 20%;
 }
 
+.msg {
+    display: flex;
+    background-color: rgba(255, 245, 233, 1);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 40px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: black;
+    width: 85%;
+}
+
+.doc{
+    margin-right: 25px;
+}
+
+.msgqr{
+    width: 90%;
+
+}
+
+.qr-mazaady {
+    width: 90%;
+    margin: 20px;
+    padding: 10px;
+}
+
 .impbtn {
     display: flex;
     margin: 10px;
 }
 
 .following, .followers, .rate {
-    margin: 10px;
+    margin: 30px;
+    width: 25%;
+    height: 30%;
 }
 
 .prodsection {
@@ -162,65 +216,48 @@ justify-content: space-between;
     font-size: 24px;
 }
 
-.proimage1 {
+.p12{
+    margin: 5px;
+}
+
+.proimg {
     position: relative;
 }
 
-.proimage1 .image1 {
+.proimg .image1{
     position: relative;
     min-width: 150px;
     min-height: 150px;
 }
 
-.proimage1 .image2 {
+.proimg .image2 {
     position: absolute;
-    top: 10px;
+    top: 20px;
     left: 10px;
 }
 
-.proimage1 .image3 {
+.proimg .image3{
     position: absolute;
     right: 0%;
     bottom: 22%;
 }
 
-.firstpro {
+.pro {
     display: flex;
     flex-direction: row;
 }
 
-.proimage2 {
+.proimg {
     
     position: relative;
 }
 
-.proimage2 .image1 {
-    position: relative;
-    min-width: 150px;
-    max-height: 150px;
-}
-
-.proimage2 .image2 {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-}
-
-.proimage2 .image3 {
-    position: absolute;
-    right: 8%;
-    bottom: 50px;
-}
-
-.secondpro {
-    display: flex;
-    flex-direction: row;
-}
 .infosec {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding: 10px;
+    width: 70%;
 }
 
 .p1, .p2, .p3 {
@@ -248,31 +285,211 @@ justify-content: space-between;
     margin-bottom: 20px;
 }
 
-@media (min-width: 520px){
-    .proimage1 {
+.line1, .line2, .global, .en, .float2 {
+    display: none;
+}
+
+.like-desk {
+    display: none;
+}
+
+@media (min-width: 520px ) and (max-width: 899px) {
+    .proimg {
             position: relative;
         }
     
-        .proimage1 .image1 {
+        .proimg .image1{
             position: relative;
             min-width: 150px;
             min-height: 150px;
         }
     
-        .proimage1 .image2 {
+        .proimg .image2{
             position: absolute;
-            top: 10px;
+            top: 20px;
             left: 10px;
         }
     
-        .proimage1 .image3 {
+        .proimg .image3{
             position: absolute;
             right: 0%;
             bottom: 10%;
         }
     
-        .firstpro {
+        .pro {
             display: flex;
             flex-direction: row;
         }
+
 }
+
+@media (min-width: 900px) {
+
+    .menu {
+        display: none;
+    }
+
+    .fullpage {
+        background-color: rgb(243, 242, 242);
+        padding: 20px;
+        display: flex;
+        }
+
+    .main-intro {
+        flex: 30%;
+        margin: 5px;
+        padding: 0px;
+    }
+
+    .intro {
+        padding: 5%;
+    }
+
+    .qr-main {
+        padding: 20px;
+    }
+
+    .down-arrow {
+        display: none;
+    }
+
+    .prodsection {
+        flex: 60%;
+        margin: 20px;
+        padding: 2%;
+    }
+
+    .float2 {
+        display: flex;
+        flex-direction: row;
+        position: static;
+        width: 150px;
+        height: 70%;
+        padding: 5px;
+        font-size: small;
+        margin: 0px;
+
+    }
+
+    .float2-div{
+        display: flex;
+        margin: 0px;
+    }
+
+    .floatbtn {
+        display: none;
+    }
+
+    .proimg .image2{
+        margin-left: 700px;
+    }
+
+    .productbtn {
+        display: flex;
+        font-size: 15px;
+        margin-top: 30px;
+        width: 200px;
+        height: 50%;;
+    }
+
+    .navlinks {
+        display: flex;
+        flex-direction: row;
+        text-decoration: none;
+        font-size: x-large;
+        margin: 20px;
+    }
+
+    .nav-item {
+        margin: 20px;
+    }
+
+    .image2 {
+        display: none;
+    }
+
+    .like-desk {
+        display: block;
+    }
+
+    .impbtn {
+        width: 90%;
+        margin: 0px;
+    }
+
+    .following,
+    .followers,
+    .rate {
+        margin: 5%;
+        width: 25%;
+        height: 30%;
+    }
+
+    .followbtn {
+        margin: 5%;
+        margin-top: 0px;
+        width: 90%;
+        height: 20%;
+        padding: 20px;
+        font-size: 16px;
+        color: white;
+        border-radius: 10px;
+        background-image: linear-gradient(to right, #D20653, #FF951D);
+        align-items: center;
+    }
+
+    .proimg .image3 {
+        position: absolute;
+        right: 0%;
+        bottom: 14%;
+    }
+
+    .line1,
+    .line2,
+    .global{
+        display: block;
+        margin: 15px;
+    }
+
+    .en {
+        display: block;
+        margin: 5px;
+        margin-right: 40px;
+    }
+
+    .infosec {
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 10px;
+        width: 70%;
+        margin-left: 15px;
+    }
+
+    .p1,
+    .p2,
+    .p3 {
+        font-size: 16px;
+    }
+
+    .probtns {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    
+    }
+
+    .probtn{
+        display: flex;
+    }
+
+    .products, .articles, .reviews {
+        display: flex;
+        flex-direction: row;
+        width: 100px;
+        height: 65%;
+        text-align: center;
+        justify-content: center;
+    }
+        
+}
+

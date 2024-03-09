@@ -7,6 +7,7 @@ const Form = ({ mainCategories, onSubmit }) => {
   const [brands, setBrands] = useState([]);
   const [transmissionTypes, setTransmissionTypes] = useState([]);
   const [selectedValues, setSelectedValues] = useState({});
+  const [additionalProcessValue, setAdditionalProcessValue] = useState('');
 
   useEffect(() => {
     // Fetch process types
@@ -39,17 +40,36 @@ const Form = ({ mainCategories, onSubmit }) => {
       ...prevState,
       [propertyName]: propertyValue
     }));
+
+    // Clear additional process value when process type changes
+    if (propertyName === 'Process Type') {
+      setAdditionalProcessValue('');
+    }
+  };
+
+  const handleAdditionalProcessChange = (event) => {
+    setAdditionalProcessValue(event.target.value);
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    onSubmit(selectedValues);
+    // Check if both main category and sub category are selected
+    if (!selectedValues['Main Category'] || !selectedValues['Sub Category']) {
+    alert('Please select both Main Category and Sub Category.');
+    return;
+  }
+  
+  // If validation passes, proceed with form submission
+    onSubmit({
+      ...selectedValues,
+      ...(additionalProcessValue && { 'Additional Process': additionalProcessValue })
+    });
   };
 
   return (
     <form onSubmit={handleSubmit}>
-      <div>
-        <label class="m-3">Main Category:</label>
+      <div className='main'>
+        <label className="m-3">Main Category:</label>
         <select onChange={(e) => handleMainCategoryChange(e.target.value)}>
           <option value="">Select Main Category</option>
           {mainCategories.map(category => (
@@ -57,8 +77,8 @@ const Form = ({ mainCategories, onSubmit }) => {
           ))}
         </select>
       </div>
-      <div>
-        <label class="m-3">Sub Category:</label>
+      <div className='sub'>
+        <label className="m-3">Sub Category:</label>
         <select onChange={(e) => handlePropertyChange('Sub Category', e.target.value)}>
           <option value="">Select Sub Category</option>
           {subCategories.map(category => (
@@ -66,8 +86,8 @@ const Form = ({ mainCategories, onSubmit }) => {
           ))}
         </select>
       </div>
-      <div>
-        <label class="m-3">Process Type:</label>
+      <div className='process'>
+        <label className="m-3">Process Type:</label>
         <select onChange={(e) => handlePropertyChange('Process Type', e.target.value)}>
           <option value="">Select Process Type</option>
           {processTypes.map(type => (
@@ -75,8 +95,19 @@ const Form = ({ mainCategories, onSubmit }) => {
           ))}
         </select>
       </div>
-      <div>
-        <label class="m-3">Brand:</label>
+      {/* Render input field only if the selected process type is 'Custom' */}
+      {selectedValues['Process Type'] === 'Custom' && (
+        <div className='custom'>
+          <label className="m-3">Custom Process:</label>
+          <input
+            type="text"
+            value={additionalProcessValue}
+            onChange={handleAdditionalProcessChange}
+          />
+        </div>
+      )}
+      <div className='brand'>
+        <label className="m-3">Brand:</label>
         <select onChange={(e) => handlePropertyChange('Brand', e.target.value)}>
           <option value="">Select Brand</option>
           {brands.map(brand => (
@@ -84,8 +115,8 @@ const Form = ({ mainCategories, onSubmit }) => {
           ))}
         </select>
       </div>
-      <div>
-        <label class="m-3" >Transmission Type:</label>
+      <div className='transmission'>
+        <label className="m-3">Transmission Type:</label>
         <select onChange={(e) => handlePropertyChange('Transmission Type', e.target.value)}>
           <option value="">Select Transmission Type</option>
           {transmissionTypes.map(type => (
@@ -93,9 +124,9 @@ const Form = ({ mainCategories, onSubmit }) => {
           ))}
         </select>
       </div>
-      <button class="m-8 pl-4" type="submit">Submit</button>
+      <button className="m-8 pl-4" type="submit">Submit</button>
     </form>
   );
 };
 
-export { Form };
+export default Form;
