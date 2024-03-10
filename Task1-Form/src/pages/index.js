@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Form from '../components/Form';
-import privateKey from './privateKey'; // Importing the private key
+import privateKey from './../privateKey'; // Importing the private key
 
 const IndexPage = () => {
   const [mainCategories, setMainCategories] = useState([]);

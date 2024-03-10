@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import privateKey from './privateKey'; // Importing the private key
+import privateKey from './../privateKey'; // Importing the private key
 
 const Form = ({ mainCategories, onSubmit }) => {
   const [subCategories, setSubCategories] = useState([]);
@@ -10,7 +10,7 @@ const Form = ({ mainCategories, onSubmit }) => {
   const [selectedValues, setSelectedValues] = useState({});
   const [additionalProcessValue, setAdditionalProcessValue] = useState('');
 
-  useEffect(() => {
+   useEffect(() => {
     // Fetch process types
     axios.get('https://staging.mazaady.com/api/v1/get-options-child/53', {
       headers: {
@@ -26,8 +26,18 @@ const Form = ({ mainCategories, onSubmit }) => {
         'Private-Key': privateKey // Include private key in headers
       }
     })
-      .then(response => setBrands(response.data))
-      .catch(error => console.error('Error fetching brands:', error));
+.then(response => {
+      // Check if response data is an array
+      if (Array.isArray(response.data)) {
+        setBrands(response.data);
+      } else {
+        // If response data is not an array, handle the error gracefully
+        console.error('Error fetching brands: Response data is not an array');
+        // You can set brands to an empty array or handle the error in another way
+        setBrands([]);
+      }
+    })
+    .catch(error => console.error('Error fetching brands:', error));
 
     // Fetch transmission types
     axios.get('https://staging.mazaady.com/api/v1/get-options-child/55', {
