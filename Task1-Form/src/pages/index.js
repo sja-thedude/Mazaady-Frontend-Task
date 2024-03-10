@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Form from '../components/Form';
+import privateKey from './privateKey'; // Importing the private key
 
 const IndexPage = () => {
   const [mainCategories, setMainCategories] = useState([]);
@@ -12,12 +13,17 @@ const IndexPage = () => {
 
   const fetchMainCategories = async () => {
     try {
-      const response = await axios.get('https://staging.mazaady.com/api/v1/get_all_cats');
+      const response = await axios.get('https://staging.mazaady.com/api/v1/get_all_cats', {
+        headers: {
+          'Private-Key': privateKey // Include private key in headers
+        }
+      });
       setMainCategories(response.data);
     } catch (error) {
       console.error('Error fetching main categories:', error);
     }
   };
+
 
   const handleSubmit = (values) => {
     setSelectedValues(values);

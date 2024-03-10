@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import privateKey from './privateKey'; // Importing the private key
 
 const Form = ({ mainCategories, onSubmit }) => {
   const [subCategories, setSubCategories] = useState([]);
@@ -11,17 +12,29 @@ const Form = ({ mainCategories, onSubmit }) => {
 
   useEffect(() => {
     // Fetch process types
-    axios.get('https://staging.mazaady.com/api/v1/get-options-child/53')
+    axios.get('https://staging.mazaady.com/api/v1/get-options-child/53', {
+      headers: {
+        'Private-Key': privateKey // Include private key in headers
+      }
+    })
       .then(response => setProcessTypes(response.data))
       .catch(error => console.error('Error fetching process types:', error));
 
     // Fetch brands
-    axios.get('https://staging.mazaady.com/api/v1/get-options-child/54')
+    axios.get('https://staging.mazaady.com/api/v1/get-options-child/54', {
+      headers: {
+        'Private-Key': privateKey // Include private key in headers
+      }
+    })
       .then(response => setBrands(response.data))
       .catch(error => console.error('Error fetching brands:', error));
 
     // Fetch transmission types
-    axios.get('https://staging.mazaady.com/api/v1/get-options-child/55')
+    axios.get('https://staging.mazaady.com/api/v1/get-options-child/55', {
+      headers: {
+        'Private-Key': privateKey // Include private key in headers
+      }
+    })
       .then(response => setTransmissionTypes(response.data))
       .catch(error => console.error('Error fetching transmission types:', error));
   }, []);
