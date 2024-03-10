@@ -1,6 +1,6 @@
 import Image from 'next/image'; // Import the Image component
 import { Inter } from 'next/font/google';
-
+import '@testing-library/jest-dom';
 const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
