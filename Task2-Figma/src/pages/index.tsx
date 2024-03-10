@@ -301,7 +301,7 @@ export default function Home() {
           
           <div className='infosec'>
             <p className='p1'>Six-Piece Clothing Set {'('}Blouse - Pants - Hat And ...</p>
-            <p className='p2'>Starting Price 1000 EGP</p>
+            <p className='p2'>Starting Price <b className='large'>1000 EGP</b></p>
             <p className='p3'>Lot Starts In</p>
             <div className='btnsclass'>
               <button className="first rounded">2 Days</button>
@@ -351,7 +351,7 @@ export default function Home() {
             </div>
             <div className='infosec'>
             <p className='p1'>Six-Piece Clothing Set {'('}Blouse - Pants - Hat And ...</p>
-            <p className='p2'>Starting Price 1000 EGP</p>
+            <p className='p2'>Starting Price <b className='large'>1000 EGP</b></p>
             <p className='p3'>Lot Starts In</p>
             <div className='btnsclass'>
               <button className="first rounded">2 Days</button>
@@ -401,7 +401,7 @@ export default function Home() {
             </div>
             <div className='infosec'>
             <p className='p1'>Six-Piece Clothing Set {'('}Blouse - Pants - Hat And ...</p>
-            <p className='p2'>Starting Price 1000 EGP</p>
+            <p className='p2'>Starting Price <b className='large'>1000 EGP</b></p>
             <p className='p3'>Lot Starts In</p>
             <div className='btnsclass'>
               <button className="first rounded">2 Days</button>
@@ -452,7 +452,7 @@ export default function Home() {
           </div>
             <div className='infosec'>
             <p className='p1'>Six-Piece Clothing Set {'('}Blouse - Pants - Hat And ...</p>
-            <p className='p2'>Starting Price 1000 EGP</p>
+            <p className='p2'>Starting Price <b className='large'>1000 EGP</b></p>
             <p className='p3'>Lot Starts In</p>
             <div className='btnsclass'>
               <button className="first rounded">2 Days</button>
@@ -502,7 +502,7 @@ export default function Home() {
           </div>
             <div className='infosec'>
             <p className='p1'>Six-Piece Clothing Set {'('}Blouse - Pants - Hat And ...</p>
-            <p className='p2'>Starting Price 1000 EGP</p>
+            <p className='p2'>Starting Price <b className='large'>1000 EGP</b></p>
             <p className='p3'>Lot Starts In</p>
             <div className='btnsclass'>
               <button className="first rounded">2 Days</button>
@@ -552,7 +552,7 @@ export default function Home() {
           </div>
             <div className='infosec'>
             <p className='p1'>Six-Piece Clothing Set {'('}Blouse - Pants - Hat And ...</p>
-            <p className='p2'>Starting Price 1000 EGP</p>
+            <p className='p2'>Starting Price <b className='large'>1000 EGP</b></p>
             <p className='p3'>Lot Starts In</p>
             <div className='btnsclass'>
               <button className="first rounded">2 Days</button>
